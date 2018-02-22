@@ -7,3 +7,4 @@ RUN cd /opt/ && wget https://root.cern.ch/download/root_v6.12.04.Linux-ubuntu16-
 RUN wget http://github.com/danmar/cppcheck/releases/download/1.81/cppcheck-1.81.tar.gz && tar -xzf cppcheck-1.81.tar.gz && cd cppcheck-1.81 && make -j 2 SRCDIR=build CFGDIR=/usr/share/cppcheck/ && make -j 2 install CFGDIR=/usr/share/cppcheck/ && cd
 RUN wget https://github.com/gcovr/gcovr/archive/3.3.tar.gz && tar -xzf 3.3.tar.gz && cd gcovr-3.3 && python setup.py install && cd
 RUN cd /opt/ && wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip && unzip sonar-scanner-cli-3.0.3.778-linux.zip && ln -s /opt/sonar-scanner-3.0.3.778-linux/bin/sonar-scanner /usr/bin/sonar-scanner
+RUN cd /opt/ && wget ftp://lyoftp.in2p3.fr/baulieu/tensorflow_ubuntu16.tgz && tar -xzf tensorflow_ubuntu16.tgz && rm tensorflow_ubuntu16.tgz
