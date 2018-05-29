@@ -1,5 +1,5 @@
 # This is a comment
-FROM ubuntu:latest
+FROM ubuntu:16.04
 MAINTAINER Guillaume Baulieu <g.baulieu@ipnl.in2p3.fr>
 RUN apt-get update && apt-get install -y git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libxext-dev gfortran libssl-dev libpcre3-dev xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev graphviz-dev libavahi-compat-libdnssd-dev libldap2-dev python-dev libxml2-dev libkrb5-dev libgsl0-dev libqt4-dev wget libboost-all-dev libeigen3-dev python-setuptools vim unzip subversion valgrind emacs autoconf automake libtool graphviz gv libunwind8 libunwind-dev libtinyxml-dev doxygen texlive geany python-pip python-dev lbzip2
 ADD known_hosts /root/.ssh/known_hosts
