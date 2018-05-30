@@ -13,5 +13,5 @@ build:
     stage: build
     script:
       - cd gamma_dev 
-      - docker build -f Dockerfile .
-      - docker push gitlab-registry.in2p3.fr/gbaulieu/docker_gamma
+      - docker build -f Dockerfile -t $CI_REGISTRY_IMAGE .
+      - docker push $CI_REGISTRY_IMAGE
