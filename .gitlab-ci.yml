@@ -1,0 +1,17 @@
+image: docker:stable
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+services:
+    - docker:dind
+
+before_script:
+    - docker info
+
+build:
+    stage: build
+    script:
+      - cd gamma_dev 
+      - docker build -t Dockerfile .
+      - docker push gitlab-registry.in2p3.fr/gbaulieu/docker_gamma
