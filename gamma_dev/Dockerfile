@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y git dpkg-dev cmake g++ gcc binutils lib
 ADD known_hosts /root/.ssh/known_hosts
 RUN cd /opt/ && wget https://root.cern.ch/download/root_v6.14.04.Linux-ubuntu16-x86_64-gcc5.4.tar.gz && tar -xzf root_v6.14.04.Linux-ubuntu16-x86_64-gcc5.4.tar.gz && rm root_v6.14.04.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
 RUN wget http://github.com/danmar/cppcheck/archive/1.84.tar.gz && tar -xzf 1.84.tar.gz && cd cppcheck-1.84 && make -j 2 SRCDIR=build CFGDIR=/usr/share/cppcheck/ && make -j 2 install CFGDIR=/usr/share/cppcheck/ && cd
-RUN cd /opt/ && wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip && unzip sonar-scanner-cli-3.2.0.1227-linux.zip && ln -s /opt/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner /usr/bin/sonar-scanner
+RUN cd /opt/ && wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip && unzip sonar-scanner-cli-3.2.0.1227-linux.zip && ln -s /opt/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner /usr/bin/sonar-scanner
 RUN cd /opt/ && wget ftp://lyoftp.in2p3.fr/baulieu/tensorflow_ubuntu16.tgz && tar -xzf tensorflow_ubuntu16.tgz && rm tensorflow_ubuntu16.tgz
 RUN pip install tensorflow
 RUN cd /opt/ && mkdir -p data/neda/numexo47 && cd data/neda/numexo47 && wget ftp://lyoftp.in2p3.fr/baulieu/run_0138.dat.03-05-18_14h21m50s.2.gz
