@@ -13,5 +13,5 @@ build:
     stage: build
     script:
       - cd gamma_dev 
-      - docker build -f Dockerfile -t $CI_REGISTRY_IMAGE .
-      - docker push $CI_REGISTRY_IMAGE
+      - docker build -f Dockerfile -t ${CI_REGISTRY_IMAGE}:prod .
+      - docker push ${CI_REGISTRY_IMAGE}:prod
