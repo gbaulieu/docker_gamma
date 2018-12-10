@@ -6,6 +6,10 @@ RUN cd /opt/ && wget https://root.cern.ch/download/root_v6.14.04.Linux-ubuntu16-
 RUN cd /opt/ && wget ftp://lyoftp.in2p3.fr/baulieu/tensorflow_ubuntu16.tgz && tar -xzf tensorflow_ubuntu16.tgz && rm tensorflow_ubuntu16.tgz
 RUN pip install tensorflow
 RUN cd /opt/ && mkdir -p data/neda/numexo47 && cd data/neda/numexo47 && wget ftp://lyoftp.in2p3.fr/baulieu/run_0138.dat.03-05-18_14h21m50s.2.gz
-ADD agata_env.sh /etc/profile.d/agata_env.sh
 ADD install_agata.sh /opt/install_agata.sh
+ENV ROOTSYS="/opt/root/"
+ENV PATH="$ROOTSYS/bin/:/opt/AgataSoftware/bin/:${PATH}"
+ENV TENSORFLOW_DIR="/opt/tensorflow/"
+ENV LD_LIBRARY_PATH="${ROOTSYS}/lib/:${TENSORFLOW_DIR}/lib/:/opt/AgataSoftware/lib/:${LD_LIBRARY_PATH}"
+ENV OMP_NUM_THREADS 2
 RUN cd /opt/ && chmod u+x install_agata.sh && ./install_agata.sh
