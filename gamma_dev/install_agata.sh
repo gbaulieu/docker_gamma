@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir AgataSoftware
 cd AgataSoftware
+export gRaySoftware_Version=1
 git clone https://gitlab.in2p3.fr/IPNL_GAMMA/scripts.git
 python scripts/gRaySoftware.py --cmake="-DCMAKE_BUILD_TYPE=release -- -j 4" --adf= all
 python scripts/gRaySoftware.py --cmake="-DCMAKE_BUILD_TYPE=release -- -j 4" --mfm= all
